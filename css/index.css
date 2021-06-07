@@ -53,6 +53,7 @@
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     transition:0.3s;
+    z-index: 9999;
 }
 .app .qrcode img{
     width:90px;
@@ -77,4 +78,134 @@
 .shop-cart:hover a{
     background-color: #fff;
     color:#FF6700;
+}
+.header-wrapper{
+    position: relative;
+}
+/* 设置中间的header */
+.header{
+    height: 100px;
+}
+
+.header .logo{
+    float: left;
+    margin-top:22px;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.header .logo a{
+    /* display: block; */
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left:0;
+    background-color:#FF6700;
+    background-image: url(../img/mi-logo.png);
+    background-position: center;
+    transition:left 0.3s;
+}
+
+.header .logo .home{
+    left:-55px;
+    background-image: url(../img/mi-home.png);
+}
+.header .logo:hover .mi{
+    left:55px;
+}
+.header .logo:hover .home{
+    left:0;
+}
+
+/* 设置中间导航条 */
+.header .nav-wrapper{
+    float:left;
+    margin-left:7px;
+}
+/* 设置导航条 */
+.header .nav{
+    /* width: 792px; */
+    line-height: 100px;
+    padding-left: 58px;
+}
+
+/* 设置导航条的li */
+.nav-wrapper li{
+    float: left;
+}
+
+.nav-wrapper li a{
+    display: block;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.nav-wrapper li a:hover{
+    color:#FF6700;
+}
+/* 隐藏全部商品 */
+.all-goods{
+    visibility: hidden;
+}
+.nav .goods-info{
+    width: 100%;
+    /* height: 228px; */
+    height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    position: absolute;
+    top:100px;
+    left:0;
+    /* border-top: 1px solid rgb(224, 224, 224);
+    box-shadow:0 5px 3px rgba(0, 0, 0, .2); */
+    transition: 0.3s;
+    z-index: 9999;
+}
+.nav li.show-goods:hover ~ .goods-info,
+.goods-info:hover{
+    height: 228px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow:0 5px 3px rgba(0, 0, 0, .2);
+}
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    float: right;
+    margin-top: 25px;
+}
+
+.search-wrapper .search-inp{
+    box-sizing: border-box;
+    width: 244px;
+    border:none;
+    float: left;
+    padding: 0 10px;
+    height: 50px;
+    font-size: 16px;
+    border:1px solid rgb(224, 224, 224);
+    outline: none;
+}
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + button{
+    border-color: #FF6700;
+}
+.search-wrapper .search-btn{
+    float: left;
+    height: 50px;
+    width: 52px;
+    padding:0;
+    border:none;
+    background-color: #fff;
+    color:#616161;
+    font-size: 16px;
+    border: 1px solid rgb(224,224,224);
+    border-left: none;
+}
+.search-wrapper .search-btn:hover{
+    background-color: #FF6700;
+    color:white;
+    border:none;
 }
